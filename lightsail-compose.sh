@@ -14,14 +14,14 @@ chmod +x /usr/local/bin/docker-compose
 # if you change this, change the systemd service file to match
 # WorkingDirectory=[whatever you have below]
 mkdir /srv/docker
-curl -o /srv/docker/docker-compose.yml https://raw.githubusercontent.com/kiwiidb/plausible-hosting/master/docker-compose.yml
-curl -o /srv/docker/docker-compose.caddy-gen.yml https://raw.githubusercontent.com/kiwiidb/plausible-hosting/master/reverse-proxy/docker-compose.caddy-gen.yml
+curl -o docker-compose.yml https://raw.githubusercontent.com/kiwiidb/plausible-hosting/master/docker-compose.yml
+curl -o docker-compose.caddy-gen.yml https://raw.githubusercontent.com/kiwiidb/plausible-hosting/master/reverse-proxy/docker-compose.caddy-gen.yml
 
 
 # copy in systemd unit file and register it so our compose file runs 
 # on system restart
-curl -o /etc/systemd/system/docker-compose-app.service https://raw.githubusercontent.com/kiwiidb/plausible-hosting/master/docker-compose-app.service
-systemctl enable docker-compose-app
+# curl -o /etc/systemd/system/docker-compose-app.service https://raw.githubusercontent.com/kiwiidb/plausible-hosting/master/docker-compose-app.service
+# systemctl enable docker-compose-app
 
 # start up the application via docker-compose
-docker-compose -f /srv/docker/docker-compose.yml -f /srv/docker/docker-compose.caddy-gen.yml up -d
+docker-compose -f docker-compose.yml -f docker-compose.caddy-gen.yml up -d
