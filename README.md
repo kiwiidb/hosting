@@ -1,3 +1,15 @@
+# Lightsail Plausible: installation instructions
+
+- Paste the following script as an entrypoint:
+```
+sudo yum install -y git
+git clone https://github.com/kiwiidb/plausible-hosting
+cd plausible-hosting
+chmod +x lightsail-compose.sh
+export ENV_VAR_1=value1
+# ..todo specify env vars
+./lightsail-compose.sh
+```
 # Plausible Analytics setup examples
 
 This repository acts as a a template to get up and running with [Plausible Analytics](https://github.com/plausible/analytics).
