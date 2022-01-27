@@ -5,10 +5,13 @@
 sudo yum install -y git
 git clone https://github.com/kiwiidb/plausible-hosting
 cd plausible-hosting
-chmod +x lightsail-compose.sh
-export ENV_VAR_1=value1
-# ..todo specify env vars
-./lightsail-compose.sh
+chmod +x install.sh
+chmod +x start.sh
+export ADMIN_USER_EMAIL=<your email>
+export ADMIN_USER_NAME=<your name>
+export ADMIN_USER_PWD=<your secure password>
+export HOST=<your host>
+./install.sh
 ```
 # Plausible Analytics setup examples
 

@@ -15,9 +15,9 @@ services:
 
   plausible:
     labels:
-      virtual.host: "analytics.flitz.be" # change to your domain name
+      virtual.host: "$HOST" # change to your domain name
       virtual.port: "8000"
-      virtual.tls-email: "kwinten@flitz.be" # change to your email
+      virtual.tls-email: "$ADMIN_USER_EMAIL" # change to your email
         
 volumes:
     caddy-certificates:
