@@ -10,6 +10,7 @@ $10 or $20 dollar /month instances should suffice.
 ```
 #!/bin/bash
 sudo yum install -y git
+cd $HOME
 git clone https://github.com/kiwiidb/plausible-hosting 2>/dev/null
 cd plausible-hosting
 chmod +x install.sh
