@@ -3,7 +3,7 @@
 - Paste the following script as an entrypoint:
 ```
 sudo yum install -y git
-git clone https://github.com/kiwiidb/plausible-hosting
+git clone https://github.com/kiwiidb/plausible-hosting 2>/dev/null
 cd plausible-hosting
 chmod +x install.sh
 chmod +x start.sh

@@ -2,6 +2,7 @@
 sudo amazon-linux-extras install docker -y
 sudo service docker start
 sudo usermod -a -G docker ec2-user
+newgrp docker
 
 # Make docker auto-start
 sudo chkconfig docker on
@@ -11,7 +12,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose version
 
 # Inject configuration variables
-SECRET_KEY_BASE=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 70)
+SECRET_KEY_BASE=$(openssl rand -base64 64 | tr -d '\n')
 sed -i "s/%ADMIN_USER_EMAIL/$ADMIN_USER_EMAIL" plausible-conf.env
 sed -i "s/%ADMIN_USER_NAME/$ADMIN_USER_NAME" plausible-conf.env
 sed -i "s/%ADMIN_USER_PWD/$ADMIN_USER_PWD" plausible-conf.env
