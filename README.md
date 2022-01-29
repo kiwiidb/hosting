@@ -24,7 +24,7 @@ export ADMIN_USER_PWD=<your secure password>
 export HOST=<your host>
 ./install.sh
 ```
-12. After this has completed, check if everything is up and running using `docker ps`.
+12. After this has completed, check if everything is up and running using `docker ps`. Be aware that you need root privileges for running docker commands.
 13. Surf to `analytics.yoursite.com` to check out your new Plausible server :).
 
 ## Known issues
