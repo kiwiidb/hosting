@@ -22,4 +22,4 @@ sed -i "s|%SECRET_KEY_BASE|$SECRET_KEY_BASE|g" plausible-conf.env
 sed -i "s|%ADMIN_USER_EMAIL|$ADMIN_USER_EMAIL|g" reverse-proxy/docker-compose.caddy-gen.yml
 sed -i "s|%HOST|$HOST|g" reverse-proxy/docker-compose.caddy-gen.yml
 
-./start.sh
+docker-compose -f docker-compose.yml -f reverse-proxy/docker-compose.caddy-gen.yml up -d
