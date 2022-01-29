@@ -21,7 +21,7 @@ export HOST=<your host>
 ```
 7. Optionally enable snapshots or change the default ssh key.
 8. Wait for the instance to come online
-9. Under the networking tab of the instance, attach your static IP to the instance.
+9. Under the networking tab, attach your static IP to the instance.
 10. 
 
 ## Known issues
