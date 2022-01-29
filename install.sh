@@ -5,8 +5,6 @@ else
 	echo "Docker not yet running, installing and starting now"
 	sudo amazon-linux-extras install docker -y
 	sudo service docker start
-	sudo usermod -a -G docker ec2-user
-	sudo su $USER
 	# Make docker auto-start
 	sudo chkconfig docker on
 fi
