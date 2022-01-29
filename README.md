@@ -10,9 +10,10 @@ $10 or $20 dollar /month instances should suffice.
 8. Wait for the instance to come online
 9. Under the networking tab of the instance, attach your static IP to the instance. Also add an HTTPS firewall rule.
 10. Connect to your instance using the web ssh client.
-11. Execute the following commands:
+11. Execute the following commands (fill in the custom values first):
 ```
-sudo yum install -y git
+sudo su
+yum install -y git
 cd $HOME
 git clone https://github.com/kiwiidb/plausible-hosting 2>/dev/null
 cd plausible-hosting
