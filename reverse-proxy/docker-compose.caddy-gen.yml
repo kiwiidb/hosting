@@ -15,9 +15,9 @@ services:
 
   plausible:
     labels:
-      virtual.host: "$HOST" # change to your domain name
+      virtual.host: ${HOST}
       virtual.port: "8000"
-      virtual.tls-email: "$ADMIN_USER_EMAIL" # change to your email
+      virtual.tls-email: ${ADMIN_USER_EMAIL}
         
 volumes:
     caddy-certificates:

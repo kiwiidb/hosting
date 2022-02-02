@@ -17,15 +17,5 @@ else
 	/usr/local/bin/docker-compose version
 fi
 
-# Inject configuration variables
-SECRET_KEY_BASE=$(openssl rand -base64 64 | tr -d '\n')
-sed -i "s|%ADMIN_USER_EMAIL|$ADMIN_USER_EMAIL|g" plausible-conf.env
-sed -i "s|%ADMIN_USER_NAME|$ADMIN_USER_NAME|g" plausible-conf.env
-sed -i "s|%ADMIN_USER_PWD|$ADMIN_USER_PWD|g" plausible-conf.env
-sed -i "s|%HOST|$HOST|g" plausible-conf.env
-sed -i "s|%SECRET_KEY_BASE|$SECRET_KEY_BASE|g" plausible-conf.env
-
-sed -i "s|%ADMIN_USER_EMAIL|$ADMIN_USER_EMAIL|g" reverse-proxy/docker-compose.caddy-gen.yml
-sed -i "s|%HOST|$HOST|g" reverse-proxy/docker-compose.caddy-gen.yml
-
+export SECRET_KEY_BASE=$(openssl rand -base64 64 | tr -d '\n')
 /usr/local/bin/docker-compose -f docker-compose.yml -f reverse-proxy/docker-compose.caddy-gen.yml up -d

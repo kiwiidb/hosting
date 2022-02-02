@@ -1,9 +1,5 @@
 version: "3.3"
 services:
-  mail:
-    image: bytemark/smtp
-    restart: always
-
   plausible_db:
     image: postgres:12
     restart: always
@@ -34,8 +30,12 @@ services:
       - mail
     ports:
       - 8000:8000
-    env_file:
-      - plausible-conf.env
+    environment:
+      - ADMIN_USER_EMAIL
+      - ADMIN_USER_NAME
+      - ADMIN_USER_PWD
+      - BASE_URL=https://${HOST}
+      - SECRET_KEY_BASE
 
 volumes:
   db-data:
