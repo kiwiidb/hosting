@@ -24,7 +24,7 @@ export ADMIN_USER_PWD=<your secure password>
 export HOST=<your host>
 export MAILER_EMAIL=<"from" email for plausible mails send from smtp>
 export SMTP_HOST_ADDR=<smtp address>
-export SMTP_HOST_PORT=<smtp port>
+export SMTP_HOST_PORT=<smtp port (465)>
 export SMTP_USER_NAME=<smpt username>
 export SMTP_USER_PWD=<smtp pwd>
 ./install.sh
